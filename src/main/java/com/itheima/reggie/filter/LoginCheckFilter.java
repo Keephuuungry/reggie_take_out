@@ -48,7 +48,9 @@ public class LoginCheckFilter implements Filter {
                 // 静态资源里面没有数据，需要拦截的是那些请求数据的Controller
                 "/backend/**",
                 "/front/**",
-                "/common/**"
+                "/common/**",
+                "/user/sendMsg", // 移动端发送短信
+                "/user/login" // 移动端登录
         };
 
         // 2. 判断本次请求是否需要处理
@@ -59,7 +61,7 @@ public class LoginCheckFilter implements Filter {
             filterChain.doFilter(request, response);
             return;
         }
-        // 4. 判断登录状态，如果已经登录，则直接放行
+        // 4-1. 判断登录状态，如果已经登录，则直接放行
         if(request.getSession().getAttribute("employee") != null){
             Long empId = (Long) request.getSession().getAttribute("employee");
             log.info("用户已登录，用户id为:{}", empId);
@@ -69,6 +71,18 @@ public class LoginCheckFilter implements Filter {
             filterChain.doFilter(request, response);
             return;
         }
+
+        // 4-2. 判断登录状态（移动端），如果已经登录，则直接放行
+        if(request.getSession().getAttribute("user") != null){
+            Long userId = (Long) request.getSession().getAttribute("user");
+            log.info("用户已登录，用户id为:{}", userId);
+            // 往线程中放empId
+            BaseContext.setCurrentId(userId);
+
+            filterChain.doFilter(request, response);
+            return;
+        }
+
         // 5. 如果未登录则返回未登录结果,通过输出流的方式向客户端响应数据
         // /backend/js/request.js，每个前端页面都有引入该js文件
         // 该文件的作用是拦截服务器端发过来的请求，如果res.data.code == 0 or res.data.msg == 'NOTLOGIN' 则返回登录界面
