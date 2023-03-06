@@ -122,7 +122,7 @@
       <workItem from="1677736950704" duration="18454000" />
       <workItem from="1677915499226" duration="948000" />
       <workItem from="1678090566801" duration="1609000" />
-      <workItem from="1678100274039" duration="303000" />
+      <workItem from="1678100274039" duration="624000" />
     </task>
     <task id="LOCAL-00001" summary="测试">
       <created>1677587385720</created>
@@ -173,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678100392614</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="20230306&#10;加入redis，缓存验证码和菜品">
+      <created>1678100595311</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1678100595311</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
