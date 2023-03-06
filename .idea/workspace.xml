@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3e4d80be-fe3b-474b-a135-9ff0e2520065" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,13 +56,14 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Github\reggie_take_out\src" />
       <recent name="D:\Github\reggie_take_out\src\main\java\com\itheima\reggie\entity" />
       <recent name="D:\Github\reggie_take_out\src\main\java\com\itheima\reggie\controller" />
       <recent name="D:\Github\reggie_take_out\src\main\java\com\itheima\reggie\utils" />
       <recent name="D:\Github\reggie_take_out\src\main\java\com\itheima\reggie\dto" />
-      <recent name="D:\Github\reggie_take_out\src\main\resources\backend\page\demo" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Github\reggie_take_out" />
       <recent name="D:\Github\reggie_take_out\src\main\resources\static" />
     </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
@@ -122,7 +123,7 @@
       <workItem from="1677671748681" duration="5963000" />
       <workItem from="1677736950704" duration="18454000" />
       <workItem from="1677915499226" duration="948000" />
-      <workItem from="1678090566801" duration="1238000" />
+      <workItem from="1678090566801" duration="1609000" />
     </task>
     <task id="LOCAL-00001" summary="测试">
       <created>1677587385720</created>
@@ -159,7 +160,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678099473564</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="20230306&#10;加入redis，缓存验证码和菜品">
+      <created>1678099632414</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1678099632414</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -179,7 +187,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="测试" />
     <MESSAGE value="20230302" />
-    <option name="LAST_COMMIT_MESSAGE" value="20230302" />
+    <MESSAGE value="20230306&#10;加入redis，缓存验证码和菜品" />
+    <option name="LAST_COMMIT_MESSAGE" value="20230306&#10;加入redis，缓存验证码和菜品" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
