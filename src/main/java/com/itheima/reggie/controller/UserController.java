@@ -10,6 +10,7 @@ import com.itheima.reggie.utils.SMSUtils;
 import com.itheima.reggie.utils.ValidateCodeUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpSession;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 @Slf4j
 @RequestMapping("/user")
@@ -25,6 +27,9 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private RedisTemplate redisTemplate;
 
     /**
      * 发送手机短信验证码 对应前端页面/front/page/login.html中sendMsgApi函数
@@ -45,11 +50,12 @@ public class UserController {
             // 自定义的工具类SMSUtils
 //            SMSUtils.sendMessage("瑞吉外卖", "SMS_271520576", phone, "1234");
 
-            // 4. 将生成的验证码保存到Session中
-            httpSession.setAttribute(phone, code);
+            // 4. 优化前：将生成的验证码保存到Session中
+//            httpSession.setAttribute(phone, code);
+            // 优化：将生成的验证码缓存到Redis中，并设置有效期为5分钟
+            redisTemplate.opsForValue().set(phone, code, 5, TimeUnit.MINUTES);
         }
         return R.error("短信发送失败");
-
     }
 
     /**
@@ -68,8 +74,10 @@ public class UserController {
         String phone = map.get("phone").toString();
         String code = map.get("code").toString();
 
-        // 2. 从Session中获取保存的验证码（我们生成验证码之后存在Session中用于核验）
-        Object codeInSession = httpSession.getAttribute(phone);
+        // 2. 优化前：从Session中获取保存的验证码（我们生成验证码之后存在Session中用于核验）
+//        Object codeInSession = httpSession.getAttribute(phone);
+        // 2. 优化：从Redis中获取缓存的验证码
+        Object codeInSession = redisTemplate.opsForValue().get(phone);
 
         // 3. 进行验证码比对(页面提交的验证码和Session中保存的验证码比对）
         if(codeInSession != null && codeInSession.equals(code)){
@@ -84,7 +92,9 @@ public class UserController {
                 userService.save(user);
             }
             // 登录成功，需要向Session中放"user"，否则会被过滤器拦截
+            // 优化：如果用户登录成功，删除Redis中缓存的验证码
             httpSession.setAttribute("user", user.getId());
+            redisTemplate.delete(phone);
             return R.success(user);
         }
 
