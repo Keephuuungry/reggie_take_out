@@ -1,6 +1,8 @@
 package com.itheima.reggie.common;
 
 import lombok.Data;
+
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -9,7 +11,7 @@ import java.util.Map;
  * @param <T>
  */
 @Data
-public class R<T> {
+public class R<T> implements Serializable {
 
     // 这里的code、msg、data三个参数和前端相契合
     private Integer code; //编码：1成功，0和其它数字为失败

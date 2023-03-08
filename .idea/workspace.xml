@@ -6,7 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="3e4d80be-fe3b-474b-a135-9ff0e2520065" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/reggie/controller/DishController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itheima/reggie/controller/DishController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/reggie/ReggieApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itheima/reggie/ReggieApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/reggie/common/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itheima/reggie/common/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/reggie/controller/SetmealController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itheima/reggie/controller/SetmealController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,6 +117,9 @@
       <list>
         <item itemvalue="Spring Boot.ReggieApplication" />
         <item itemvalue="JUnit.UploadFileTest.test1" />
+        <item itemvalue="Spring Boot.ReggieApplication" />
+        <item itemvalue="JUnit.UploadFileTest.test1" />
+        <item itemvalue="Spring Boot.ReggieApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -134,6 +141,8 @@
       <workItem from="1677915499226" duration="948000" />
       <workItem from="1678090566801" duration="1609000" />
       <workItem from="1678100274039" duration="3545000" />
+      <workItem from="1678180439688" duration="2190000" />
+      <workItem from="1678255570881" duration="2721000" />
     </task>
     <task id="LOCAL-00001" summary="测试">
       <created>1677587385720</created>
@@ -237,7 +246,7 @@
     </pin-to-top-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/reggie_take_out$ReggieApplication.ic" NAME="ReggieApplication Coverage Results" MODIFIED="1677487165511" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/reggie_take_out$ReggieApplication.ic" NAME="ReggieApplication Coverage Results" MODIFIED="1678258312506" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.itheima.reggie.*</FILTER>
     </SUITE>
   </component>
