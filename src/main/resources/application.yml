@@ -59,4 +59,5 @@ mybatis-plus:
       id-type: ASSIGN_ID
 # 自定义文件上传的根目录
 reggie:
-  path: D:\img\
+#  path: D:\img\
+  path: /usr/local/img/
